@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCalculator", "DynamicCalculator\DynamicCalculator.csproj", "{57E16E24-8FF0-433D-8B32-BE8B0764E6EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E16E24-8FF0-433D-8B32-BE8B0764E6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E16E24-8FF0-433D-8B32-BE8B0764E6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E16E24-8FF0-433D-8B32-BE8B0764E6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E16E24-8FF0-433D-8B32-BE8B0764E6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF1DEA0E-F9EC-4C5F-B9EC-A5C7173344B0}
+	EndGlobalSection
+EndGlobal
