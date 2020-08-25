@@ -21,15 +21,8 @@ namespace DynamicCalculator
         {
             string equation = textBox1.Text;
             DynaCode dynaCode = new DynaCode(equation);
-            string result = "";
-            try
-            {
-                result = dynaCode.Execute().ToString();
-            }
-            catch(Exception ex)
-            {
-                result = "Równanie jest nieprawidłowe";
-            }
+            string result = "";            
+            result = dynaCode.Execute().ToString();            
             textBox2.Text = result.ToString();            
         }
 

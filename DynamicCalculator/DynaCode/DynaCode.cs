@@ -34,9 +34,16 @@ namespace DynamicCalculator
                     "}";
         }
 
-        public object Execute()
+        public object Execute(bool withResult = false)
         {
-            return CompileAndRun();
+            try
+            {
+                return CompileAndRun();
+            }
+            catch(Exception ex)
+            {
+                return "Równanie jest nieprawidłowe " + (withResult ? ex.Message : string.Empty);
+            }
         }
 
         internal object CompileAndRun()
