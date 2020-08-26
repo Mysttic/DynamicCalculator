@@ -66,6 +66,7 @@ namespace DynamicCalculatorTests
         public void Modulo()
         {
             Assert.AreEqual(1, Calc("5%4"));
+            Assert.AreEqual(0, Calc("1%1"));
             Assert.AreEqual(2.8m, Calc("5.9m%3.1m", 0m)); 
         }
 
@@ -79,25 +80,48 @@ namespace DynamicCalculatorTests
         [TestMethod]
         public void OperacjeZParsowaniemInt()
         {
+            Assert.AreEqual(4, Calc("2 + Int32.Parse(\"2\")"));
+            Assert.AreEqual(6, Calc("Int32.Parse(\"3\") + Int32.Parse(\"3\")"));
+        }
 
+        [TestMethod]
+        public void OperacjeZParsowaniemDouble()
+        {            
+            Assert.AreEqual(4, Calc("2.5 + Double.Parse(\"1,5\")"));
+            Assert.AreEqual(6, Calc("Double.Parse(\"2,5\") + Double.Parse(\"3,5\")"));
+        }
+
+        [TestMethod]
+        public void OperacjeZParsowaniemDecimal()
+        {
+            Assert.AreEqual(4, Calc("2.5m + Decimal.Parse(\"1,5\")"));
+            Assert.AreEqual(6, Calc("Decimal.Parse(\"2,5\") + Decimal.Parse(\"3,5\")"));
         }
 
         [TestMethod]
         public void Potegowanie()
         {
-
+            Assert.AreEqual(8, Calc("Math.Pow(2,3)"));
+            Assert.AreEqual(0.25, Calc("Math.Pow(2,-2)"));
+            Assert.AreEqual(15.625, Calc("Math.Pow(2.5,3)"));
+            Assert.AreEqual(1664966416, Calc("Math.Pow(202,4)"));
         }
 
         [TestMethod]
-        public void SprawdzaniePierwszenstwaOperacjiMatemetycznych1()
+        public void Pierwiastkowanie()
         {
-
+            Assert.AreEqual(9, Calc("Math.Sqrt(81)"));
+            Assert.AreEqual(double.NaN, Calc("Math.Sqrt(-81)"));
+            Assert.AreEqual(0.3, Calc("Math.Sqrt(0.09)"));
+            Assert.AreEqual(0, Calc("Math.Sqrt(0)"));
+            Assert.AreEqual(0, Calc("Math.Sqrt(-0)"));
         }
 
         [TestMethod]
-        public void SprawdzaniePierwszenstwaOperacjiMatematycznych2()
+        public void SprawdzanieKolejnosciOperacjiMatemetycznych1()
         {
-
+            Assert.AreEqual(6, Calc("2+2*2"));
+            Assert.AreEqual(8, Calc("(2+2)*2"));
         }
     }
 }
