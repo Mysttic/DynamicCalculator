@@ -78,27 +78,6 @@ namespace DynamicCalculatorTests
         }
 
         [TestMethod]
-        public void OperacjeZParsowaniemInt()
-        {
-            Assert.AreEqual(4, Calc("2 + Int32.Parse(\"2\")"));
-            Assert.AreEqual(6, Calc("Int32.Parse(\"3\") + Int32.Parse(\"3\")"));
-        }
-
-        [TestMethod]
-        public void OperacjeZParsowaniemDouble()
-        {            
-            Assert.AreEqual(4, Calc("2.5 + Double.Parse(\"1,5\")"));
-            Assert.AreEqual(6, Calc("Double.Parse(\"2,5\") + Double.Parse(\"3,5\")"));
-        }
-
-        [TestMethod]
-        public void OperacjeZParsowaniemDecimal()
-        {
-            Assert.AreEqual(4, Calc("2.5m + Decimal.Parse(\"1,5\")"));
-            Assert.AreEqual(6, Calc("Decimal.Parse(\"2,5\") + Decimal.Parse(\"3,5\")"));
-        }
-
-        [TestMethod]
         public void Potegowanie()
         {
             Assert.AreEqual(8, Calc("Math.Pow(2,3)"));
